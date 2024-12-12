@@ -15,16 +15,18 @@ let adj = ['great', 'big'];
 let noun = ['jogger', 'racoon','ventus'];
 let ext = [ '.com', '.net', '.us', '.io'];
 
-pronoun.forEach((pro)=> {
-  adj.forEach((ad)=>{
-    noun.forEach((no)=>{
-      ext.forEach((e)=>{
-        //console.log(pro+ad+no+e);  
-        if(no.slice(-1*(e.length-1)) == e.slice(1)){
-          console.log(pro+ad+no.slice(0,ext.length)+e);
+pronoun.forEach((pronombre)=> {
+  adj.forEach((adjetivo)=>{
+    noun.forEach((sustantivo)=>{
+      ext.forEach((extension)=>{
+        
+        const nounMatchExtension = sustantivo.endsWith(extension.slice(1));
+        
+        if(nounMatchExtension){
+          console.log(pronombre+adjetivo+sustantivo.slice(0,ext.length)+extension);
         }
         else{
-          console.log(pro+ad+no+e); 
+          console.log(pronombre+adjetivo+sustantivo+extension); 
         }
 
       })
